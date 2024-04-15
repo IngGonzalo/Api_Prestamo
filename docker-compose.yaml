@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  database:
+
+    image: mysql
+    container_name: Api_Prestamo
+
+    environment:
+      MYSQL_DATABASE: "DB_Prestamo"
+      MYSQL_USER: "Gonzalo"
+      MYSQL_PASSWORD: "gonzalo123"
+      MYSQL_ROOT_PASSWORD: "gonzalo123"
+
+    ports:
+      - "3307:3306"
+    
+    volumes:
+      - './mysql:/var/lib/mysql'
