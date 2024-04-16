@@ -24,11 +24,22 @@ class Loan extends Model
         'total_value',
         'state',
     ];
-
-    public function customer()
+    
+    public function customers()
     {
         return $this->belongsTo(Customer::class);
     }
+    public function coins()
+    {
+        return $this->belongsTo(Coin::class);
+    }
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-
+    public function loandetails()
+    {
+        return $this->hasMany(LoanDetail::class);
+    }
 }

@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Coin extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'symbol',
+    ];
+
+
+    public function loans()
+    {
+        return $this->hasMany(Loan::class);
+    }
 }
